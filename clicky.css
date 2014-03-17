@@ -6,6 +6,6 @@ div {
 	align:center;
 }
 
-#button, #autobutton, #perclickbutton, #armbombbutton {
+#button, #autobutton, #perclickbutton, #armbombbutton, #bombupgradebutton {
 	cursor:pointer;
 }
