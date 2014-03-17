@@ -1,15 +1,30 @@
 div {
-	border:2px solid;
-	border-radius:5px;
-	width:33%;
-	height:20%;
-	align:center;
+	border: 1px solid black;
+	border-radius: 5px;
+	width: 33%;
+	height: 20%;
 }
 
 #button, #autobutton, #perclickbutton, #armbombbutton, #bombupgradebutton, #upgbuttonrankbutton {
-	cursor:pointer;
+	cursor: pointer;
 }
 
 .hidden {
 	visibility: hidden;
+}
+
+#game {
+	background-color: #adadad;
+}
+
+#right {
+	background-color: #b7b7b7;
+}
+
+#bombtickt {
+	width: 60%;
+}
+
+#currank {
+	width: 30%;
 }
