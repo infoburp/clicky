@@ -28,6 +28,10 @@ function buyAuto(){
 		updatescreen();
 	}
 }
+$( "#bombupgradebutton" ).click(function() {
+        if (clicks > bombupgradecost) {clicks -= bombupgradecost; bombupgradeco$
+        updatescreen();
+});
 
 function buyPerClick(){
 	if (clicks >= perclickcost) {
