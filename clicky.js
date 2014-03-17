@@ -28,9 +28,16 @@ function buyAuto(){
 		updatescreen();
 	}
 }
-$( "#bombupgradebutton" ).click(function() {
-        if (clicks > bombupgradecost) {clicks -= bombupgradecost; bombupgradeco$
-        updatescreen();
+function upgradeBomb(){
+	if (clicks > bombupgradecost) {
+		clicks -= bombupgradecost;
+		bombupgradecost *= 2;
+		updatescreen();
+	} else {
+		clicks += manual;
+   		updatescreen();
+	}
+
 });
 
 function buyPerClick(){
@@ -111,12 +118,15 @@ function updatescreen(){
 	manuald = float2int(manual);
 	autocostd = float2int(autocost);
 	perclickcostd = float2int(perclickcost);
+	bombupgradecostd = float2int(bombupgradecost);
+	bombcostd = float2int(bombcost);
+	bombbonusd = float2int(bombbonus);
 
-	$( "#totalclicks" ).html(clicks + " points");
-	$( "#persecond" ).html(auto + " per second (" + autocost + ")");
-	$( "#perclick" ).html(manual + " per click (" + perclickcost + ")");
-	$( "#armbomb" ).html(bombcost + " per bomb");
-	$( "#bombupgrade" ).html(bombbonus + " per explosion (" + bombupgradecost + ")");
+	$( "#totalclicks" ).html(clicksd + " points");
+	$( "#persecond" ).html(autod + " per second (" + autocostd + ")");
+	$( "#perclick" ).html(manuald + " per click (" + perclickcostd + ")");
+	$( "#armbomb" ).html(bombcostd + " per bomb");
+	$( "#bombupgrade" ).html(bombbonusd + " per explosion (" + bombupgradecostd + ")");
 }
 
 function float2int (value) {
