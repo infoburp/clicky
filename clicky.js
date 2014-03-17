@@ -56,10 +56,12 @@ function buyAuto(){
 		updatescreen();
 	} 
 }
+
 function upgradeBomb(){
 	if (clicks >= bombupgradecost) {
 		clicks -= bombupgradecost;
 		bombupgradecost *= 2;
+		bombbonus *= 2;
 		updatescreen();
 	}
 }
