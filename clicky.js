@@ -78,9 +78,13 @@ function buyPerClick(){
 
 function armBomb(){
 	if (clicks >= bombcost) {
-		bombactive = true;
-		clicks -= bombcost;
-		updatescreen();
+		if (!bombactive) {
+			bombactive = true;
+			clicks -= bombcost;
+			updatescreen();
+		} else {
+			alert("Bomb currently active.")
+		}
 	}
 }
 
@@ -90,6 +94,7 @@ function doSomething() {
 		fuseleft -= 1;
 		if (fuseleft === 0) {
 			bombgoesoff();
+			updatescreen();
 		}
 	}
 	updatescreen();
@@ -99,7 +104,8 @@ function bombgoesoff() {
 	clicks += bombbonus;
 	fuseleft = 30;
 	bombactive = false;
-    $( "bombtick" ).html("No bomb currently.");
+	$( "bombtick" ).html("No bomb currently.");
+	updatescreen();
 }
 
 setInterval(doSomething, 1000);
@@ -116,7 +122,7 @@ function updatescreen(){
 	rankupgradecostd = float2int(rankupgradecost);
 	fuseleftd = float2int(fuseleft);
 
-	$( "#ranK" ).html("Rank " + rank + ".");
+	$( "#ranK" ).html("Rank " + rank + "."); 
 	$( "#totalclicks" ).html(clicksd + " points");
 	$( "#persecond" ).html(autod + " per second (" + autocostd + ")");
 	$( "#perclick" ).html(manuald + " per click (" + perclickcostd + ")");
@@ -125,7 +131,6 @@ function updatescreen(){
 	$( "#upgbuttonrank" ).html("Upgrade your rank (" + rankupgradecostd + ")");
 	if (bombactive) {
 		$( "#bombtick" ).html(fuseleftd + "!");
-
 	}
 
 	if (clicks >= 32) {
