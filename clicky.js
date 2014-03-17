@@ -23,10 +23,7 @@ function buyAuto(){
 		autofactor += .8;
 		auto *= 2;
 		updatescreen();
-	} else {
-		clicks += manual;
-		updatescreen();
-	}
+	} 
 }
 function upgradeBomb(){
 	if (clicks > bombupgradecost) {
