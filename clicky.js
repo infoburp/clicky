@@ -116,6 +116,7 @@ function updatescreen(){
 	rankupgradecostd = float2int(rankupgradecost);
 	fuseleftd = float2int(fuseleft);
 
+	$( "#ranK" ).html("Rank " + rank + ".");
 	$( "#totalclicks" ).html(clicksd + " points");
 	$( "#persecond" ).html(autod + " per second (" + autocostd + ")");
 	$( "#perclick" ).html(manuald + " per click (" + perclickcostd + ")");
