@@ -16,6 +16,11 @@ $( "#button" ).click(function() {
 	updatescreen(); 
 });
 
+$( "#bombupgradebutton" ).click(function() {
+        if (clicks > bombupgradecost) {clicks -= bombupgradecost; bombupgradecost *= 2;}
+        updatescreen();
+});
+
 $( "#autobutton" ).click(function() {
 	clicks += manual;
 	updatescreen(); 
@@ -72,6 +77,9 @@ function updatescreen(){
 	$( "#totalclicks" ).html(clicks + " points");
 	$( "#persecond" ).html(auto + " per second (" + autocost + ")");
 	$( "#perclick" ).html(manual + " per click (" + perclickcost + ")");
+	$( "#armbomb" ).html(bombcost + " per bomb");
+	$( "#bombupgrade" ).html(bombbonus + " per explosion (" + bombupgradecost + ")");
+
 }
 
 function float2int (value) {
