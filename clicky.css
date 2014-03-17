@@ -9,3 +9,7 @@ div {
 #button, #autobutton, #perclickbutton, #armbombbutton {
 	cursor:pointer;
 }
+
+button {
+	/* Hiding hides the image alongside the border. */
+}

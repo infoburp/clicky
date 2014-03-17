@@ -11,6 +11,49 @@ var bombbonus = 16;
 var bombcost = 8;
 var bombupgradecost = 32;
 
+function manualClick(){
+	clicks += manual;
+	updatescreen();
+}
+
+function buyAuto(){
+	if (clicks >= autocost) {
+		clicks -= autocost;
+		autocost *= autofactor;
+		autofactor += .8;
+		auto *= 2;
+		updatescreen();
+	} else {
+		clicks += manual;
+		updatescreen();
+	}
+}
+
+function buyPerClick(){
+	if (clicks >= perclickcost) {
+		clicks -= perclickcost;
+		perclickcost *= perclickfactor;
+		perclickfactor += .8;
+		manual *= 2;
+		updatescreen();
+	} else {
+		clicks += manual;
+		updatescreen();
+	}
+}
+
+function armBomb(){
+	if (clicks>bombcost) {
+		bombactive = true;
+		clicks -= bombcost;
+		updatescreen();
+	} else {
+		clicks += manual;
+		updatescreen();
+	}
+}
+
+/* 
 $( "#button" ).click(function() {
 	clicks += manual;   
 	updatescreen(); 
@@ -21,13 +64,6 @@ $( "#autobutton" ).click(function() {
 	updatescreen(); 
 });
 
-if (clicks >= autocost) {
-	clicks -= autocost;
-	autocost *= autofactor;
-	autofactor += .8;
-	auto *= 2;
-	updatescreen();
-}
  
 $( "#perclickbutton" ).click(function() {
 	if (clicks >= perclickcost) {
@@ -45,33 +81,37 @@ $( "#armbombbutton" ).click(function() {
         if (clicks>bombcost) {bombactive = true; clicks -= bombcost;}   
         updatescreen();
 });
+*/
 
 function doSomething() {
 	clicks += auto;
-	if (bombactive = true) {fuseleft -= 1; if (fuseleft = 0) { bombgoesoff() } }
+	if (bombactive = true) {
+		fuseleft -= 1;
+		if (fuseleft = 0) {
+			bombgoesoff() 
+		} 
+	}
 	updatescreen();
 }
 
 function bombgoesoff() {
-clicks += bombbonus;
-fuseleft = 30;
-bombactive = false;
+	clicks += bombbonus;
+	fuseleft = 30;
+	bombactive = false;
 }
 
 setInterval(doSomething, 1000);
 
 function updatescreen(){
-	/*
 	clicksd = float2int(clicks);
 	autod = float2int(auto);
 	manuald = float2int(manual);
 	autocostd = float2int(autocost);
 	perclickcostd = float2int(perclickcost);
-	*/
 
-	$( "#totalclicks" ).html(clicks + " points");
-	$( "#persecond" ).html(auto + " per second (" + autocost + ")");
-	$( "#perclick" ).html(manual + " per click (" + perclickcost + ")");
+	$( "#totalclicks" ).html(clicksd + " points");
+	$( "#persecond" ).html(autod + " per second (" + autocostd + ")");
+	$( "#perclick" ).html(manuald + " per click (" + perclickcostd + ")");
 }
 
 function float2int (value) {
