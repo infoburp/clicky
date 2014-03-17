@@ -55,6 +55,7 @@ function doSomething() {
 function bombgoesoff() {
 clicks += bombbonus;
 fuseleft = 30;
+bombactive = false;
 }
 
 setInterval(doSomething, 1000);
