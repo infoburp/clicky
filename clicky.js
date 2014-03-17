@@ -6,10 +6,7 @@ var perclickcost = 2;
 var autofactor = 1;
 var perclickfactor = 1; 
 
-$( "#perclickbutton" ).click(function() {
-	clicks += manual;
-	updatescreen();
-});
+
 
 $( "#button" ).click(function() {
 	clicks += manual;   
