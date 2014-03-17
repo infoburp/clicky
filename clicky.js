@@ -38,7 +38,7 @@ function upgradeBomb(){
    		updatescreen();
 	}
 
-});
+};
 
 function buyPerClick(){
 	if (clicks >= perclickcost) {
