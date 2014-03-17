@@ -1,92 +1,22 @@
+<!DOCTYPE html>
 <html>
-<head>
-<style>
-div
-{
-border:2px solid;
-border-radius:5px;
-width:33%;
-align:center;
-}
-</style>
-</head>
-<body>
-<div id="game" align="center">
-<h1>clicky</h1>
+	<head>
+		<link type="text/css" rel="clicky.css">
+		<title>Clicky game</title>
+	</head>
+	<body>
+		<div id="game" align="center">
+		<h1>clicky</h1>
 
-<div id="totalclicks"></div>
-<img id="button" src ="sign_add.png"></img>
-<div id="persecond"></div>
-<img id="autobutton" src ="sign_add.png"><br></img>
-<div id="perclick"></div>
-<img id="perclickbutton" src ="sign_add.png"><br></img>
-<br>
-<script src="jquery-1.11.0.js"></script>
-<script>
-clicks = 0;
-manual = 1;
-auto = 1;
-autocost = 2;
-perclickcost = 2;
-autofactor = 1;
-perclickfactor = 1; 
-updatescreen();
-
-$( "#button" ).click(function() {
-clicks += manual;   
-updatescreen(); 
-
-});
-$( "#autobutton" ).click(function() {
-updatescreen(); 
-
-if (clicks>autocost) {
-clicks -= autocost;
-autocost = autocost *autofactor;
-autofactor += .8;
-auto += auto;
-updatescreen();
-}
- 
-
-});
-$( "#perclickbutton" ).click(function() {
-updatescreen();
-
-if (clicks>perclickcost) {
-clicks -= perclickcost;
-perclickcost = perclickcost * perclickfactor;
-perclickfactor += .8;
-manual= manual * 2;
-updatescreen();
-}
-updatescreen();
-
-});
-function doSomething() {
-  clicks += auto;
-updatescreen();
-
-}
-
-setInterval('doSomething()',1000);
-function updatescreen(){
-clicksd = float2int(clicks);
-autod = float2int(auto);
-manuald = float2int(manual);
-autocostd = float2int(autocost);
-perclickcostd = float2int(perclickcost);
-
-$("#totalclicks").html(clicksd + " points" );
-$("#persecond").html(autod + " per second (" + autocostd + ")");
-$("#perclick").html(manuald + " per click (" + perclickcostd + ")");
-
-}
-function float2int (value) {
-    return value | 0;
-}
-</script>
-
-</div>
-</body>
+		<div id="totalclicks"></div>
+		<img id="button" src ="sign_add.png"></img>
+		<div id="persecond"></div>
+		<img id="autobutton" src ="sign_add.png"><br></img>
+		<div id="perclick"></div>
+		<img id="perclickbutton" src ="sign_add.png"><br></img>
+		<br>
+		<script language="text/javascript" type="javascript" src="jquery-1.11.0.js"></script>
+		<script language="text/javascript" type="javascript" src="clicky.js"></script>
+		</div>
+	</body>
 </html>
