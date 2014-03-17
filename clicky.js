@@ -11,6 +11,7 @@ var bombbonus = 16;
 var bombcost = 8;
 var bombupgradecost = 32;
 var buttonrank = 1;
+var buttonrankupgradecost = 32;
 
 function manualClick(){
 	clicks += manual;
@@ -18,6 +19,10 @@ function manualClick(){
 	if (clicks >= 32) {
 		document.getElementById('upgbuttonrank').style.visibility="visible";
 		document.getElementById('upgbuttonrankbutton').style.visibility="visible";
+	}
+	if (buttonrank >= 2) {
+		document.getElementById('persecond').style.visibility="visible";
+		document.getElementById('autobutton').style.visibility="visible";
 	}
 }
 
@@ -30,6 +35,7 @@ function buyAuto(){
 		updatescreen();
 	} 
 }
+
 function upgradeBomb(){
 	if (clicks > bombupgradecost) {
 		clicks -= bombupgradecost;
@@ -66,40 +72,6 @@ function armBomb(){
 	}
 }
 
-/*
-$( "#button" ).click(function() {
-	clicks += manual;   
-	updatescreen(); 
-});
-
-$( "#bombupgradebutton" ).click(function() {
-        if (clicks > bombupgradecost) {clicks -= bombupgradecost; bombupgradecost *= 2;}
-        updatescreen();
-});
-
-$( "#autobutton" ).click(function() {
-	clicks += manual;
-	updatescreen(); 
-});
-
-$( "#perclickbutton" ).click(function() {
-	if (clicks >= perclickcost) {
-		clicks -= perclickcost;
-		perclickcost *= perclickfactor;
-		perclickfactor += .8;
-		manual *= 2;
-		updatescreen();
-	} else {
-		updatescreen();
-	}
-});
-
-$( "#armbombbutton" ).click(function() {
-        if (clicks>bombcost) {bombactive = true; clicks -= bombcost;}   
-        updatescreen();
-});
-*/
-
 function doSomething() {
 	clicks += auto;
 	if (bombactive = true) {fuseleft -= 1; if (fuseleft = 0) { bombgoesoff() } }
@@ -123,12 +95,14 @@ function updatescreen(){
 	bombupgradecostd = float2int(bombupgradecost);
 	bombcostd = float2int(bombcost);
 	bombbonusd = float2int(bombbonus);
+	buttonrankupgradecostd = float2int(buttonrankupgradecost);
 
 	$( "#totalclicks" ).html(clicksd + " points");
 	$( "#persecond" ).html(autod + " per second (" + autocostd + ")");
 	$( "#perclick" ).html(manuald + " per click (" + perclickcostd + ")");
 	$( "#armbomb" ).html(bombcostd + " per bomb");
 	$( "#bombupgrade" ).html(bombbonusd + " per explosion (" + bombupgradecostd + ")");
+	$( "#upgbuttonrank" ).html("Upgrade to next button rank (" + buttonrankupgradecostd + ")");
 }
 
 function float2int (value) {
