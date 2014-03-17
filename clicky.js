@@ -27,6 +27,7 @@ function upgButtonRank(){
         clicks -= buttonrankupgradecost;
         buttonrankupgradecost *= 5;
         buttonrank += 1;
+        updatescreen();
         if (buttonrank >= 2) {
 			document.getElementById('persecond').style.visibility="visible";
 			document.getElementById('autobutton').style.visibility="visible";
@@ -125,6 +126,11 @@ function updatescreen(){
 	$( "#perclick" ).html(manuald + " per click (" + perclickcostd + ")");
 	$( "#armbomb" ).html(bombcostd + " per bomb");
 	$( "#bombupgrade" ).html(bombbonusd + " per explosion (" + bombupgradecostd + ")");
+
+	if (clicks >= 32) {
+		document.getElementById('upgbuttonrank').style.visibility="visible";
+		document.getElementById('upgbuttonrankbutton').style.visibility="visible";
+	}
 }
 
 function float2int (value) {
