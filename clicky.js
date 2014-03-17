@@ -18,20 +18,20 @@ $( "#autobutton" ).click(function() {
 	updatescreen(); 
 });
 
-if (clicks>autocost) {
+if (clicks >= autocost) {
 	clicks -= autocost;
-	autocost = autocost *autofactor;
+	autocost *= autofactor;
 	autofactor += .8;
-	auto += auto;
+	auto *= 2;
 	updatescreen();
 }
  
 $( "#perclickbutton" ).click(function() {
-	if (clicks>perclickcost) {
+	if (clicks >= perclickcost) {
 		clicks -= perclickcost;
-		perclickcost = perclickcost * perclickfactor;
+		perclickcost *= perclickfactor;
 		perclickfactor += .8;
-		manual= manual * 2;
+		manual *= 2;
 		updatescreen();
 	}
 	updatescreen();
@@ -42,7 +42,7 @@ function doSomething() {
 	updatescreen();
 }
 
-setInterval('doSomething()',1000);
+setInterval(doSomething, 1000);
 
 function updatescreen(){
 	clicksd = float2int(clicks);
@@ -51,11 +51,11 @@ function updatescreen(){
 	autocostd = float2int(autocost);
 	perclickcostd = float2int(perclickcost);
 
-	$("#totalclicks").html(clicksd + " points" );
-	$("#persecond").html(autod + " per second (" + autocostd + ")");
-	$("#perclick").html(manuald + " per click (" + perclickcostd + ")");
+	$( "#totalclicks" ).html(clicksd + " points");
+	$( "#persecond" ).html(autod + " per second (" + autocostd + ")");
+	$( "#perclick" ).html(manuald + " per click (" + perclickcostd + ")");
 }
 
 function float2int (value) {
-    return value | 0;
+    return ~~value;
 }
