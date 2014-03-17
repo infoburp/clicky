@@ -1,6 +1,6 @@
 var clicks = 0;
 var manual = 1;
-var auto = 1;
+var auto = 1;	
 var autocost = 2;
 var perclickcost = 2;
 var autofactor = 1;
@@ -31,8 +31,9 @@ $( "#perclickbutton" ).click(function() {
 		perclickfactor += .8;
 		manual *= 2;
 		updatescreen();
+	} else {
+		updatescreen();
 	}
-	updatescreen();
 });
 
 function doSomething() {
@@ -43,15 +44,17 @@ function doSomething() {
 setInterval(doSomething, 1000);
 
 function updatescreen(){
+	/*
 	clicksd = float2int(clicks);
 	autod = float2int(auto);
 	manuald = float2int(manual);
 	autocostd = float2int(autocost);
 	perclickcostd = float2int(perclickcost);
+	*/
 
-	$( "#totalclicks" ).html(clicksd + " points");
-	$( "#persecond" ).html(autod + " per second (" + autocostd + ")");
-	$( "#perclick" ).html(manuald + " per click (" + perclickcostd + ")");
+	$( "#totalclicks" ).html(clicks + " points");
+	$( "#persecond" ).html(auto + " per second (" + autocost + ")");
+	$( "#perclick" ).html(manual + " per click (" + perclickcost + ")");
 }
 
 function float2int (value) {
