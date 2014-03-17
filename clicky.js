@@ -11,6 +11,7 @@ var bombbonus = 16;
 var bombcost = 8;
 var bombupgradecost = 32;
 var buttonrank = 1;
+var buttonrankupgradecost = 32;
 
 function manualClick(){
 	clicks += manual;
