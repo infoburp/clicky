@@ -5,6 +5,11 @@ var autocost = 2;
 var perclickcost = 2;
 var autofactor = 1;
 var perclickfactor = 1; 
+var fuseleft = 30;
+var bombactive = false;
+var bombbonus = 16;
+var bombcost = 8;
+var bombupgradecost = 32;
 
 $( "#button" ).click(function() {
 	clicks += manual;   
@@ -36,9 +41,20 @@ $( "#perclickbutton" ).click(function() {
 	}
 });
 
+$( "#armbombbutton" ).click(function() {
+        if (clicks>bombcost) {bombactive = true; clicks -= bombcost;}   
+        updatescreen();
+});
+
 function doSomething() {
 	clicks += auto;
+	if (bombactive = true) {fuseleft -= 1; if (fuseleft = 0) { bombgoesoff() } }
 	updatescreen();
+}
+
+function bombgoesoff() {
+clicks += bombbonus;
+fuseleft = 30;
 }
 
 setInterval(doSomething, 1000);
