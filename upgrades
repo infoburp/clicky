@@ -1,0 +1,8 @@
+per second
+per click
+bomb arm
+bomb upgrade
+multiplier upgrade (score = clicks * multiplier)
+garden (plant seeds, clicks += seeds * plantbonus)
+casino (flip a coin - heads win tails lose. bet 10 100 1000 10000 100000 etc
+
