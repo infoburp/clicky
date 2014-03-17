@@ -92,7 +92,7 @@ function doSomething() {
 	clicks += auto;
 	if (bombactive === true) {
 		fuseleft -= 1;
-		if (fuseleft === 0) {
+		if (fuseleft <= 0) {
 			bombgoesoff();
 			updatescreen();
 		}
