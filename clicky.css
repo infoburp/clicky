@@ -6,6 +6,10 @@ div {
 	align:center;
 }
 
-#button, #autobutton, #perclickbutton, #armbombbutton, #bombupgradebutton {
+#button, #autobutton, #perclickbutton, #armbombbutton, #bombupgradebutton, #upgbuttonrankbutton {
 	cursor:pointer;
+}
+
+.hidden {
+	visibility: hidden;
 }

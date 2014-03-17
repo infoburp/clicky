@@ -12,14 +12,16 @@
 
 		<div id="totalclicks">0 points</div>
 		<button id="button" onclick="manualClick()"><img src="sign_add.png"></img></button>
-		<div id="persecond">0 per second (2)</div>
-		<button id="autobutton" onclick="buyAuto()"><img src="sign_add.png"><br></img></button>
-		<div id="perclick">1 per click (2)</div>
-		<button id="button" onclick="buyPerClick()"><img src="sign_add.png"><br></img></button>
-		<div id="armbomb"></div>
-        <button id="button" onclick="armBomb()"><img src="sign_add.png"><br></img></button>
-		<div id="bombupgrade"></div>
-        <button id="bombupgradebutton" onclick="upgradeBomb()"><img id="bombupgradebutton" src="sign_add.png"><br></img></button>
+		<div id="upgbuttonrank" class="hidden">Show next button (32)</div>
+		<button id="upgbuttonrankbutton" class="hidden" onclick="upgButtonRank()"><img src="sign_add.png"></img></button>
+		<div class="hidden" id="persecond">0 per second (2)</div>
+		<button id="autobutton" class="hidden" onclick="buyAuto()"><img src="sign_add.png"><br></img></button>
+		<div class="hidden" id="perclick">1 per click (2)</div>
+		<button id="perclickbutton" class="hidden" onclick="buyPerClick()"><img src="sign_add.png"><br></img></button>
+		<div class="hidden" id="armbomb">8 per bomb</div>
+        <button id="armbombbutton" class="hidden" onclick="armBomb()"><img src="sign_add.png"><br></img></button>
+		<div class="hidden" id="bombupgrade">16 per explosion (32)</div>
+        <button id="bombupgradebutton" class="hidden" onclick="upgradeBomb()"><img id="bombupgradebutton" src="sign_add.png"><br></img></button>
 		<br>
 		</div>
 	</body>

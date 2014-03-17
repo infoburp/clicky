@@ -10,10 +10,15 @@ var bombactive = false;
 var bombbonus = 16;
 var bombcost = 8;
 var bombupgradecost = 32;
+var buttonrank = 1;
 
 function manualClick(){
 	clicks += manual;
 	updatescreen();
+	if (clicks >= 32) {
+		document.getElementById('upgbuttonrank').style.visibility="visible";
+		document.getElementById('upgbuttonrankbutton').style.visibility="visible";
+	}
 }
 
 function buyAuto(){
