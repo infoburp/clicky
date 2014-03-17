@@ -49,9 +49,9 @@ function updatescreen(){
 	autocostd = float2int(autocost);
 	perclickcostd = float2int(perclickcost);
 
-	$( "#totalclicks" ).html(clicksd + " points");
-	$( "#persecond" ).html(autod + " per second (" + autocostd + ")");
-	$( "#perclick" ).html(manuald + " per click (" + perclickcostd + ")");
+	$( "#totalclicks" ).html(clicks + " points");
+	$( "#persecond" ).html(autod + " per second (" + autocost + ")");
+	$( "#perclick" ).html(manuald + " per click (" + perclickcost + ")");
 }
 
 function float2int (value) {
