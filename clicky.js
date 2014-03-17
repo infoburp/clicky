@@ -120,12 +120,14 @@ function updatescreen(){
 	bombupgradecostd = float2int(bombupgradecost);
 	bombcostd = float2int(bombcost);
 	bombbonusd = float2int(bombbonus);
+	buttonrankupgradecostd = float2int(buttonrankupgradecost);
 
 	$( "#totalclicks" ).html(clicksd + " points");
 	$( "#persecond" ).html(autod + " per second (" + autocostd + ")");
 	$( "#perclick" ).html(manuald + " per click (" + perclickcostd + ")");
 	$( "#armbomb" ).html(bombcostd + " per bomb");
 	$( "#bombupgrade" ).html(bombbonusd + " per explosion (" + bombupgradecostd + ")");
+	$( "#upgbuttonrank" ).html("Show next button (" + buttonrankupgradecostd + ")");
 
 	if (clicks >= 32) {
 		document.getElementById('upgbuttonrank').style.visibility="visible";
