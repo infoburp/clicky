@@ -10,7 +10,7 @@ div {
     outline: none;
 }
 #button, #autobutton, #perclickbutton, #armbombbutton, #bombupgradebutton, #upgbuttonrankbutton {
-	cursor: pointer;background-color:#adadad;
+	cursor: pointer;background-color:#FFFFFF;
     
         border:0px solid #dcdcdc;
 }
