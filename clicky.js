@@ -13,19 +13,20 @@ var bombupgradecost = 32;
 var rank = 1;
 var rankupgradecost = 32;
 var multiplier = 1;
+var score = 0;
 
 function manualClick(){
 	clicks += manual;
 	updatescreen();
-	if (clicks >= 32) {
+	if (score >= 32) {
 		document.getElementById('upgbuttonrank').style.visibility="visible";
 		document.getElementById('upgbuttonrankbutton').style.visibility="visible";
 	}
 }
 
 function upgButtonRank(){
-    if (clicks >= rankupgradecost) {
-        clicks -= rankupgradecost;
+    if (score >= rankupgradecost) {
+        score -= rankupgradecost;
         rankupgradecost *= 5;
         rank += 1;
         multiplier += .1;
@@ -50,8 +51,8 @@ function upgButtonRank(){
 }
 
 function buyAuto(){
-	if (clicks >= autocost) {
-		clicks -= autocost;
+	if (score >= autocost) {
+		score -= autocost;
 		autocost *= autofactor;
 		autofactor += .8;
 		auto *= 2;
@@ -60,8 +61,8 @@ function buyAuto(){
 }
 
 function upgradeBomb(){
-	if (clicks >= bombupgradecost) {
-		clicks -= bombupgradecost;
+	if (score >= bombupgradecost) {
+		score -= bombupgradecost;
 		bombupgradecost *= 2;
 		bombbonus *= 2;
 		updatescreen();
@@ -69,8 +70,8 @@ function upgradeBomb(){
 }
 
 function buyPerClick(){
-	if (clicks >= perclickcost) {
-		clicks -= perclickcost;
+	if (score >= perclickcost) {
+		score -= perclickcost;
 		perclickcost *= perclickfactor;
 		perclickfactor += .8;
 		manual *= 2;
@@ -79,10 +80,10 @@ function buyPerClick(){
 }
 
 function armBomb(){
-	if (clicks >= bombcost) {
+	if (score >= bombcost) {
 		if (!bombactive) {
 			bombactive = true;
-			clicks -= bombcost;
+			score -= bombcost;
 			updatescreen();
 		} else {
 			alert("Bomb currently active.")
