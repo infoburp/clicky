@@ -18,7 +18,7 @@
 			<div class="hidden" id="perclick">1 per click (2)</div>
 			<button id="perclickbutton" class="hidden" onclick="buyPerClick()"><img src="sign_add.png"><br></img></button>
 			<div class="hidden" id="armbomb">8 per bomb</div>
-        	<button id="armbombbutton" class="hidden" onclick="armBomb()"><img src="Lighter-icon.png"><br></img></button>
+        	<button id="armbombbutton" class="hidden" onclick="armBomb()"><img src="sign_add.png"><br></img></button>
 			<div class="hidden" id="bombupgrade">16 per explosion (32)</div>
         	<button id="bombupgradebutton" class="hidden" onclick="upgradeBomb()"><img id="bombupgradebutton" src="sign_add.png"><br></img></button>
 
