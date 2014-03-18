@@ -1,24 +1,24 @@
 $(function() {
-    $("#manualClick").click(function(e) {
-        manualClick();
-    });
-    $("#upgRankButton").click(function(e) {
-        upgButtonRank();
-    });
-    $("#buyAuto").click(function(e) {
-        buyAuto();
-    });
-    $("#buyPerClick").click(function(e) {
-        buyPerClick();
-    });
-    $("#armBombButton").click(function(e) {
-        armBomb();
-    });
-    $("#upgBombButton").click(function(e) {
-        upgradeBomb();
-    });
+	$("#manualClick").click(function(e) {
+        	manualClick();
+    	});
+    	$("#upgRankButton").click(function(e) {
+        	upgButtonRank();
+    	});
+    	$("#buyAuto").click(function(e) {
+        	buyAuto();
+    	});
+    	$("#buyPerClick").click(function(e) {
+        	buyPerClick();
+    	});
+    	$("#armBombButton").click(function(e) {
+        	armBomb();
+    	});
+    	$("#upgBombButton").click(function(e) {
+        	upgradeBomb();
+    	});
     
-    setInterval(doSomething, 1000);
+    	setInterval(doSomething, 1000);
 });
 
 var clicks = 0;
@@ -47,21 +47,22 @@ function upgButtonRank(){
         rankupgradecost *= 5;
         rank += 1;
         updatescreen();
+        
         if (rank >= 2) {
-			$("#perSecond").removeClass("hidden");
-			$("#buyAuto").removeClass("hidden");
+		$("#perSecond").removeClass("hidden");
+		$("#buyAuto").removeClass("hidden");
         }
         if (rank >= 3) {
-			$("#perClick").removeClass("hidden");
-            $("#buyPerClick").removeClass("hidden");
+		$("#perClick").removeClass("hidden");
+        	$("#buyPerClick").removeClass("hidden");
         }
         if (rank >= 4) {
-			$("#armBomb").removeClass("hidden");
-            $("#armBombButton").removeClass("hidden");
+		$("#armBomb").removeClass("hidden");
+        	$("#armBombButton").removeClass("hidden");
         }
         if (rank >= 5) {
-			$("#upgBomb").removeClass("hidden");
-            $("#upgBombButton").removeClass("hidden");
+		$("#upgBomb").removeClass("hidden");
+            	$("#upgBombButton").removeClass("hidden");
         }
     }
 }
@@ -151,7 +152,7 @@ function updatescreen(){
 
 	if (clicks >= 32) {
 		$("#upgRank").removeClass("hidden");
-        $("#upgRankButton").removeClass("hidden");
+        	$("#upgRankButton").removeClass("hidden");
 	}
 }
 
