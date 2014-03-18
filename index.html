@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script src="jquery-2.1.0.min.js"></script>
-			<script src="clicky.js"></script>
+        <title>clicky game</title>
+        
 		<link type="text/css" rel="stylesheet" href="clicky.css">
-		<title>clicky game</title>
 	</head>
+    
 	<body>
 		<div id="game" align="center">
 			<h1>clicky</h1>
-			<div id="totalclicks">0 points</div>
-			<button id="button" onclick="manualClick()"><img src="sign_add.png"></img></button>
-			<div id="upgbuttonrank" class="hidden">Upgrade your rank (32)</div>
-			<button id="upgbuttonrankbutton" class="hidden" onclick="upgButtonRank()"><img src="sign_add.png"></img></button>
-			<div class="hidden" id="persecond">0 per second (2)</div>
-			<button id="autobutton" class="hidden" onclick="buyAuto()"><img src="sign_add.png"><br></img></button>
-			<div class="hidden" id="perclick">1 per click (2)</div>
-			<button id="perclickbutton" class="hidden" onclick="buyPerClick()"><img src="sign_add.png"><br></img></button>
-			<div class="hidden" id="armbomb">8 per bomb</div>
-        	<button id="armbombbutton" class="hidden" onclick="armBomb()"><img src="sign_add.png"><br></img></button>
-			<div class="hidden" id="bombupgrade">16 per explosion (32)</div>
-        	<button id="bombupgradebutton" class="hidden" onclick="upgradeBomb()"><img id="bombupgradebutton" src="sign_add.png"><br></img></button>
+            
+			<div id="totalClicks">0 points</div>
+			<button id="manualClick"><img src="sign_add.png" alt="Manual Click"/></button>
+			<div id="upgRank" class="hidden">Upgrade your rank (32)</div>
+			<button id="upgRankButton" class="hidden"><img src="sign_add.png" alt="Upgrade Rank" /></button>
+			<div id="perSecond" class="hidden">0 per second (2)</div>
+			<button id="buyAuto" class="hidden"><img src="sign_add.png" alt="Buy Auto" /></button>
+			<div id="perClick" class="hidden">1 per click (2)</div>
+			<button id="buyPerClick" class="hidden"><img src="sign_add.png" alt="Buy Per Click" /></button>
+			<div id="armBomb" class="hidden">8 per bomb</div>
+        	<button id="armBombButton" class="hidden"><img src="sign_add.png" alt="Arm Bomb" /></button>
+			<div id="upgBomb" class="hidden">16 per explosion (32)</div>
+        	<button id="upgBombButton" class="hidden"><img src="sign_add.png" alt="Upgrade Bomb" /></button>
 
 			<br>
 		</div>
+        
 		<div id="right" align="left">
         	<div id="bombtickt">Current bomb tick: <span id="bombtick">No bomb currently.</span></div>
         	<div id="currank">Current rank: <span id="ranK">Rank 1.</span></div>
         </div>
+        
+        <script src="jquery-2.1.0.min.js"></script>
+        <script src="clicky.js"></script>
 	</body>
 </html>

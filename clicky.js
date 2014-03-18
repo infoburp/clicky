@@ -1,3 +1,26 @@
+$(function() {
+    $("#manualClick").click(function(e) {
+        manualClick();
+    });
+    $("#upgRankButton").click(function(e) {
+        upgButtonRank();
+    });
+    $("#buyAuto").click(function(e) {
+        buyAuto();
+    });
+    $("#buyPerClick").click(function(e) {
+        buyPerClick();
+    });
+    $("#armBombButton").click(function(e) {
+        armBomb();
+    });
+    $("#upgBombButton").click(function(e) {
+        upgradeBomb();
+    });
+    
+    setInterval(doSomething, 1000);
+});
+
 var clicks = 0;
 var manual = 1;
 var auto = 1;	
@@ -16,10 +39,6 @@ var rankupgradecost = 32;
 function manualClick(){
 	clicks += manual;
 	updatescreen();
-	if (clicks >= 32) {
-		document.getElementById('upgbuttonrank').style.visibility="visible";
-		document.getElementById('upgbuttonrankbutton').style.visibility="visible";
-	}
 }
 
 function upgButtonRank(){
@@ -29,20 +48,20 @@ function upgButtonRank(){
         rank += 1;
         updatescreen();
         if (rank >= 2) {
-			document.getElementById('persecond').style.visibility="visible";
-			document.getElementById('autobutton').style.visibility="visible";
+			$("#perSecond").removeClass("hidden");
+			$("#buyAuto").removeClass("hidden");
         }
         if (rank >= 3) {
-			document.getElementById('perclick').style.visibility="visible";
-			document.getElementById('perclickbutton').style.visibility="visible";
+			$("#perClick").removeClass("hidden");
+            $("#buyPerClick").removeClass("hidden");
         }
         if (rank >= 4) {
-			document.getElementById('armbomb').style.visibility="visible";
-			document.getElementById('armbombbutton').style.visibility="visible";
+			$("#armBomb").removeClass("hidden");
+            $("#armBombButton").removeClass("hidden");
         }
         if (rank >= 5) {
-			document.getElementById('bombupgrade').style.visibility="visible";
-			document.getElementById('bombupgradebutton').style.visibility="visible";
+			$("#upgBomb").removeClass("hidden");
+            $("#upgBombButton").removeClass("hidden");
         }
     }
 }
@@ -90,11 +109,10 @@ function armBomb(){
 
 function doSomething() {
 	clicks += auto;
-	if (bombactive === true) {
-		fuseleft -= 1;
+	if (bombactive) {
+		fuseleft--;
 		if (fuseleft <= 0) {
 			bombgoesoff();
-			updatescreen();
 		}
 	}
 	updatescreen();
@@ -104,11 +122,9 @@ function bombgoesoff() {
 	clicks += bombbonus;
 	fuseleft = 30;
 	bombactive = false;
-	$( "bombtick" ).html("No bomb currently.");
+	$("#bombtick").html("No bomb currently.");
 	updatescreen();
 }
-
-setInterval(doSomething, 1000);
 
 function updatescreen(){
 	clicksd = float2int(clicks);
@@ -122,20 +138,20 @@ function updatescreen(){
 	rankupgradecostd = float2int(rankupgradecost);
 	fuseleftd = float2int(fuseleft);
 
-	$( "#ranK" ).html("Rank " + rank + "."); 
-	$( "#totalclicks" ).html(clicksd + " points");
-	$( "#persecond" ).html(autod + " per second (" + autocostd + ")");
-	$( "#perclick" ).html(manuald + " per click (" + perclickcostd + ")");
-	$( "#armbomb" ).html(bombcostd + " per bomb");
-	$( "#bombupgrade" ).html(bombbonusd + " per explosion (" + bombupgradecostd + ")");
-	$( "#upgbuttonrank" ).html("Upgrade your rank (" + rankupgradecostd + ")");
+	$("#ranK").html("Rank " + rank + "."); 
+	$("#totalClicks").html(clicksd + " points");
+	$("#perSecond").html(autod + " per second (" + autocostd + ")");
+	$("#perClick").html(manuald + " per click (" + perclickcostd + ")");
+	$("#armBomb").html(bombcostd + " per bomb");
+	$("#upgBomb").html(bombbonusd + " per explosion (" + bombupgradecostd + ")");
+	$("#upgRank").html("Upgrade your rank (" + rankupgradecostd + ")");
 	if (bombactive) {
-		$( "#bombtick" ).html(fuseleftd + "!");
+		$("#bombtick").html(fuseleftd + "!");
 	}
 
 	if (clicks >= 32) {
-		document.getElementById('upgbuttonrank').style.visibility="visible";
-		document.getElementById('upgbuttonrankbutton').style.visibility="visible";
+		$("#upgRank").removeClass("hidden");
+        $("#upgRankButton").removeClass("hidden");
 	}
 }
 

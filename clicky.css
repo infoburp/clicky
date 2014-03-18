@@ -5,7 +5,7 @@ div {
 	height: 20%;
 }
 
-#button, #autobutton, #perclickbutton, #armbombbutton, #bombupgradebutton, #upgbuttonrankbutton {
+button {
 	cursor: pointer;
 }
 
