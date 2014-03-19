@@ -115,7 +115,7 @@ function bombgoesoff() {
 setInterval(doSomething, 1000);
 
 function updatescreen(){
-	score = score * multiplier;
+	score *= multiplier;
 	scored = float2int(score);
 	autod = float2int(auto);
 	manuald = float2int(manual);
