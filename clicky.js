@@ -1,4 +1,4 @@
-var clicks = 0;
+var score = 0;
 var manual = 1;
 var auto = 1;	
 var autocost = 2;
@@ -13,10 +13,9 @@ var bombupgradecost = 32;
 var rank = 1;
 var rankupgradecost = 32;
 var multiplier = 1;
-var score = 0;
 
 function manualClick(){
-	clicks += manual;
+	score += manual;
 	updatescreen();
 	if (score >= 32) {
 		document.getElementById('upgbuttonrank').style.visibility="visible";
@@ -30,7 +29,7 @@ function upgButtonRank(){
         rankupgradecost *= 5;
         rank += 1;
         multiplier += .1;
-	updatescreen();
+		updatescreen();
         if (rank >= 2) {
 			document.getElementById('persecond').style.visibility="visible";
 			document.getElementById('autobutton').style.visibility="visible";
@@ -92,7 +91,7 @@ function armBomb(){
 }
 
 function doSomething() {
-	clicks += auto;
+	score += auto;
 	if (bombactive === true) {
 		fuseleft -= 1;
 		if (fuseleft <= 0) {
@@ -104,7 +103,7 @@ function doSomething() {
 }
 
 function bombgoesoff() {
-	clicks += bombbonus;
+	score += bombbonus;
 	fuseleft = 30;
 	bombactive = false;
 	$( "bombtick" ).html("No bomb currently.");
@@ -116,7 +115,7 @@ function bombgoesoff() {
 setInterval(doSomething, 1000);
 
 function updatescreen(){
-	score = clicks * multiplier;
+	score = score * multiplier;
 	scored = float2int(score);
 	autod = float2int(auto);
 	manuald = float2int(manual);
@@ -139,7 +138,7 @@ function updatescreen(){
 		$( "#bombtick" ).html(fuseleftd + "!");
 	}
 
-	if (clicks >= 32) {
+	if (score >= 32) {
 		document.getElementById('upgbuttonrank').style.visibility="visible";
 		document.getElementById('upgbuttonrankbutton').style.visibility="visible";
 	}
