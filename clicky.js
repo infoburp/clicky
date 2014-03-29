@@ -12,7 +12,7 @@ var bombcost = 8;
 var bombupgradecost = 32;
 var rank = 1;
 var rankupgradecost = 32;
-var multiplier = 1;
+//var multiplier = 1;
 
 function manualClick(){
 	score += manual;
@@ -28,7 +28,7 @@ function upgButtonRank(){
         score -= rankupgradecost;
         rankupgradecost *= 5;
         rank += 1;
-        multiplier += .1;
+        //multiplier += .1;
 		updatescreen();
         if (rank >= 2) {
 			document.getElementById('persecond').style.visibility="visible";
@@ -115,7 +115,7 @@ function bombgoesoff() {
 setInterval(doSomething, 1000);
 
 function updatescreen(){
-	score *= multiplier;
+//	score *= multiplier;
 	scored = float2int(score);
 	autod = float2int(auto);
 	manuald = float2int(manual);
@@ -127,7 +127,7 @@ function updatescreen(){
 	rankupgradecostd = float2int(rankupgradecost);
 	fuseleftd = float2int(fuseleft);
 
-	$( "#ranK" ).html("Rank " + rank + ". Multiplier = "+ multiplier); 
+	$( "#ranK" ).html("Rank " + rank); 
 	$( "#totalclicks" ).html(scored + " points");
 	$( "#persecond" ).html(autod + " per second (" + autocostd + ")");
 	$( "#perclick" ).html(manuald + " per click (" + perclickcostd + ")");
