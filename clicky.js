@@ -13,7 +13,7 @@ var bombupgradecost = 32;
 var rank = 1;
 var rankupgradecost = 32;
 var multiplier = 1;
-
+	//score *= multiplier;
 function manualClick(){
 	score += manual;
 	updatescreen();
@@ -115,7 +115,7 @@ function bombgoesoff() {
 setInterval(doSomething, 1000);
 
 function updatescreen(){
-	score *= multiplier;
+
 	scored = float2int(score);
 	autod = float2int(auto);
 	manuald = float2int(manual);
